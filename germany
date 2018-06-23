@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Leaflet Map</title>
+    <meta charset="utf-8" />
+    <link 
+        rel="stylesheet" 
+        href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"
+    />
+</head>
+<body>
+    <div id="map" style="width: 600px; height: 400px"></div>
+
+    <script
+        src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+    </script>
+
+    <script>
+
+        var pogromsPlaces = new L.LayerGroup(); 
+        L.circle([49.9929, 8.2473], 1000, {
+        color: 'yellow',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+    }).addTo(pogromsPlaces).bindPopup("Trier");
+L.circle([49.1193, 6.1757], 1000, {
+        color: 'yellow',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+    }).addTo(pogromsPlaces).bindPopup("Metz");
+L.circle([49.3173, 8.4412], 1000, {
+        color: 'yellow',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+    }).addTo(pogromsPlaces).bindPopup("Speyer");
+L.circle([49.6341, 8.3507], 1000, {
+        color: 'yellow',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+    }).addTo(pogromsPlaces).bindPopup("Worms, Suicides");
+L.circle([49.7499, 6.6371], 1000, {
+        color: 'yellow',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+    }).addTo(pogromsPlaces).bindPopup("Mainz, Suicides");
+L.circle([50.9375, 6.9603], 1000, {
+        color: 'yellow',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+    }).addTo(pogromsPlaces).bindPopup("Cologne");
+
+
+        var coolPlaces = new L.LayerGroup();
+
+        L.circle([49.8, 8.3], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(coolPlaces).bindPopup("I am Oppenheim");
+    L.circle([49.7, 8.3], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(coolPlaces).bindPopup("I am Worms-Ibersheim");
+    L.circle([49.8, 8.35], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(coolPlaces).bindPopup("I am Dienheim");
+    L.circle([49.79, 8.25], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(coolPlaces).bindPopup("I am Dolgesheim");
+    L.circle([49.92, 7.01], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(coolPlaces).bindPopup("I am Brauneberg/Lieser");
+    L.circle([49.71, 8.47], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(coolPlaces).bindPopup("I am Groß-Rohrheim");
+    L.circle([49.8977, 7.9283], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(coolPlaces).bindPopup("I am Gensingen");
+    L.circle([49.4874, 8.466], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(coolPlaces).bindPopup("I am Mannheim");
+    L.circle([49.9667, 7.9045], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(coolPlaces).bindPopup("I am Bingen");
+    L.circle([49.7500, 6.6371], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(coolPlaces).bindPopup("I am Trier");
+    L.circle([49.9929, 8.2473], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(coolPlaces).bindPopup("I am Mainz");
+    L.circle([49.9929, 8.2473], 500, {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5
+    }).addTo(coolPlaces).bindPopup("I am Worms");
+
+        L.polygon([
+        [48.774, 8.0629],
+        [48.484, 7.811],
+        [48.0820, 7.5915]
+    ]).addTo(coolPlaces).bindPopup("I am the Rhine River! Roar!.");
+    
+
+        var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>',
+            thunLink = '<a href="http://thunderforest.com/">Thunderforest</a>';
+        
+        var osmUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+            osmAttrib = '&copy; ' + osmLink + ' Contributors',
+            landUrl = 'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
+            thunAttrib = '&copy; '+osmLink+' Contributors & '+thunLink;
+
+        var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib}),
+            landMap = L.tileLayer(landUrl, {attribution: thunAttrib});
+
+        var map = L.map('map', {
+                layers: [osmMap] // only add one!
+            })
+            .setView([49.8857, 7.5515], 8);
+
+        var baseLayers = {
+            "OSM Mapnik": osmMap,
+            "Landscape": landMap
+        };
+
+        var overlays = {
+            "Interesting places": coolPlaces,
+            "Pogroms" : pogromsPlaces
+        };
+
+        L.control.layers(baseLayers,overlays).addTo(map);
+
+    </script>
+</body>
+</html>
