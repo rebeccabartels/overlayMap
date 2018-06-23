@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Leaflet Map</title>
+    <title>Map for Client: Susanne Hafner, Programmed by: Rebecca Bartels</title>
     <meta charset="utf-8" />
     <link 
         rel="stylesheet" 
@@ -10,6 +10,7 @@
 </head>
 <body>
     <div id="map" style="width: 600px; height: 400px"></div>
+    <div>"copyright: rebeccabartels (add gitignore)</div>
 
     <script
         src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
@@ -17,107 +18,178 @@
 
     <script>
 
-        var pogromsPlaces = new L.LayerGroup(); 
+
+
+        var verdiciPlaces = new L.LayerGroup(); 
+
+        //st germain, speyer 
+        L.circle([48.8538, 2.3333], 1000, {
+        color: 'orange',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+        }).addTo(verdiciPlaces).bindPopup("Johannes Cancellarius");
+// Mainz 
+
+        L.circle([49.9929, 8.2473], 1000, {
+        color: 'orange',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+        }).addTo(verdiciPlaces).bindPopup("Radulphus Leodensis Episcopus");
+//Mainz 
+
+        L.circle([49.9929, 8.2477], 1000, {
+        color: 'orange',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+        }).addTo(verdiciPlaces).bindPopup("Archiepisopus Maguncie");
+//Metz
+
+        L.circle([49.1193, 6.1757], 1000, {
+        color: 'orange',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+        }).addTo(verdiciPlaces).bindPopup("Episcopus Metensis");
+//Dietz 50.3706° N, 8.0161° E
+
+        L.circle([50.3706, 8.0161], 1000, {
+        color: 'orange',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+        }).addTo(verdiciPlaces).bindPopup("Henricus comes de Dieea");
+
+    //Bolanden 49.6393° N, 8.0116° E
+
+        L.circle([49.6393, 8.0116], 1000, {
+        color: 'orange',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+        }).addTo(verdiciPlaces).bindPopup("Ministerialis Wernerus de Bollanda");
+    //Minseberch 50.4553° N, 8.7758° E
+
+        L.circle([50.4553, 8.7758], 1000, {
+        color: 'orange',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+        }).addTo(verdiciPlaces).bindPopup("Cono de Minseberch");
+// Leninghis 50.1324, 7.5707
+        L.circle([50.1324, 7.5707], 1000, {
+        color: 'orange',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+        }).addTo(verdiciPlaces).bindPopup("Comes de Leninghis : Emicho");
+// Gerardus comes de Loz: count Gerard of Looz 50.8061° N, 5.3430
+        L.circle([50.8061, 5.3430], 1000, {
+        color: 'orange',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+        }).addTo(verdiciPlaces).bindPopup("Gerardus comes de Loz: count Gerard of Looz");
+//Fridericus de Husa: Friedrich von Hausen 
+     L.circle([50.8061, 5.3430], 1000, {
+        color: 'orange',
+        fillColor: '#f03',
+        fillOpacity: 1.5
+        }).addTo(verdiciPlaces).bindPopup("Fridericus de Husa: Friedrich von Hausen ");
+
+
+
+
+
+
+    var pogromsPlaces = new L.LayerGroup(); 
         L.circle([49.9929, 8.2473], 1000, {
         color: 'yellow',
         fillColor: '#f03',
         fillOpacity: 1.5
     }).addTo(pogromsPlaces).bindPopup("Trier");
-L.circle([49.1193, 6.1757], 1000, {
+    L.circle([49.1193, 6.1757], 1000, {
         color: 'yellow',
         fillColor: '#f03',
         fillOpacity: 1.5
     }).addTo(pogromsPlaces).bindPopup("Metz");
-L.circle([49.3173, 8.4412], 1000, {
+    L.circle([49.3173, 8.4412], 1000, {
         color: 'yellow',
         fillColor: '#f03',
         fillOpacity: 1.5
     }).addTo(pogromsPlaces).bindPopup("Speyer");
-L.circle([49.6341, 8.3507], 1000, {
+    L.circle([49.6341, 8.3507], 1000, {
         color: 'yellow',
         fillColor: '#f03',
         fillOpacity: 1.5
     }).addTo(pogromsPlaces).bindPopup("Worms, Suicides");
-L.circle([49.7499, 6.6371], 1000, {
+    L.circle([49.7499, 6.6371], 1000, {
         color: 'yellow',
         fillColor: '#f03',
         fillOpacity: 1.5
     }).addTo(pogromsPlaces).bindPopup("Mainz, Suicides");
-L.circle([50.9375, 6.9603], 1000, {
+    L.circle([50.9375, 6.9603], 1000, {
         color: 'yellow',
         fillColor: '#f03',
         fillOpacity: 1.5
     }).addTo(pogromsPlaces).bindPopup("Cologne");
 
 
-        var coolPlaces = new L.LayerGroup();
+    var hausenPlaces = new L.LayerGroup();
 
-        L.circle([49.8, 8.3], 500, {
+    L.circle([49.8, 8.3], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(coolPlaces).bindPopup("I am Oppenheim");
+    }).addTo(hausenPlaces).bindPopup("I am Oppenheim");
     L.circle([49.7, 8.3], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(coolPlaces).bindPopup("I am Worms-Ibersheim");
+    }).addTo(hausenPlaces).bindPopup("I am Worms-Ibersheim");
     L.circle([49.8, 8.35], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(coolPlaces).bindPopup("I am Dienheim");
+    }).addTo(hausenPlaces).bindPopup("I am Dienheim");
     L.circle([49.79, 8.25], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(coolPlaces).bindPopup("I am Dolgesheim");
+    }).addTo(hausenPlaces).bindPopup("I am Dolgesheim");
     L.circle([49.92, 7.01], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(coolPlaces).bindPopup("I am Brauneberg/Lieser");
+    }).addTo(hausenPlaces).bindPopup("I am Brauneberg/Lieser");
     L.circle([49.71, 8.47], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(coolPlaces).bindPopup("I am Groß-Rohrheim");
+    }).addTo(hausenPlaces).bindPopup("I am Groß-Rohrheim");
     L.circle([49.8977, 7.9283], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(coolPlaces).bindPopup("I am Gensingen");
+    }).addTo(hausenPlaces).bindPopup("I am Gensingen");
     L.circle([49.4874, 8.466], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(coolPlaces).bindPopup("I am Mannheim");
+    }).addTo(hausenPlaces).bindPopup("I am Mannheim");
     L.circle([49.9667, 7.9045], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(coolPlaces).bindPopup("I am Bingen");
+    }).addTo(hausenPlaces).bindPopup("I am Bingen");
     L.circle([49.7500, 6.6371], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(coolPlaces).bindPopup("I am Trier");
+    }).addTo(hausenPlaces).bindPopup("I am Trier");
     L.circle([49.9929, 8.2473], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(coolPlaces).bindPopup("I am Mainz");
+    }).addTo(hausenPlaces).bindPopup("I am Mainz");
     L.circle([49.9929, 8.2473], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(coolPlaces).bindPopup("I am Worms");
-
-        L.polygon([
-        [48.774, 8.0629],
-        [48.484, 7.811],
-        [48.0820, 7.5915]
-    ]).addTo(coolPlaces).bindPopup("I am the Rhine River! Roar!.");
+    }).addTo(hausenPlaces).bindPopup("I am Worms");
     
 
         var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>',
@@ -142,11 +214,123 @@ L.circle([50.9375, 6.9603], 1000, {
         };
 
         var overlays = {
-            "Interesting places": coolPlaces,
-            "Pogroms" : pogromsPlaces
+            "Hausen's Locations": hausenPlaces,
+            "Pogroms" : pogromsPlaces,
+            "Veridici" : verdiciPlaces
         };
 
         L.control.layers(baseLayers,overlays).addTo(map);
+
+        L.polyline([
+        [50.37087, 7.61147],
+        [50.35269, 7.6046],
+        [50.33954, 7.59705],
+        [50.3219, 7.58795],
+        [50.30973, 7.59155],
+        [50.28912, 7.60992],
+        [50.26575, 7.64975],
+        [50.25621, 7.65301], 
+        [50.24841, 7.64597], 
+        [50.24633, 7.62726],
+        [50.24973, 7.59172], 
+        [50.24457, 7.57936], 
+        [50.2371, 7.57988],
+        [50.23414, 7.58726],
+        [50.23139, 7.61026],
+        [50.21316, 7.62383],
+        [50.20097, 7.64597], 
+        [50.18239, 7.64477],
+        [50.17624, 7.65026],
+        [50.16898, 7.69558],
+        [50.14897, 7.7227],
+        [50.14457, 7.72528], 
+        [50.13797, 7.72768],
+        [50.13521, 7.73729],
+        [50.12773, 7.73935],
+        [50.11529, 7.72081], 
+        [50.07488, 7.7742],
+        [50.05703, 7.77317],
+        [50.04049, 7.80201],
+        [50.00984, 7.85591],
+        [49.97452, 7.8705],
+        [49.97132, 7.8899],
+        [49.97596, 7.96371],
+        [50.00509, 8.0468],
+        [49.97596, 7.97813],
+        [50.00774, 8.05023],
+        [50.03641, 8.19374],
+        [50.01921, 8.26447],
+        [49.98788, 8.30154],
+        [49.95034, 8.34137],
+        [49.90702, 8.35442],
+        [49.88446, 8.34206],
+        [49.86322, 8.35785],
+        [49.85437, 8.38531],
+        [49.82514, 8.37845],
+        [49.8134, 8.38806],
+        [49.76752, 8.42583], 
+        [49.7653, 8.44231], 
+        [49.76707, 8.45604],
+        [49.76796, 8.47458],
+        [49.76286, 8.47973],
+        [49.75488, 8.47458],
+        [49.72936, 8.44437], 
+        [49.71449, 8.41656],
+        [49.70228, 8.36849], 
+        [49.68696, 8.35476], 
+        [49.65896, 8.37021], 
+        [49.61338, 8.39493],
+        [49.60181, 8.41141],
+        [49.58022, 8.42411], 
+        [49.55506, 8.4145], 
+        [49.54392, 8.41965],
+        [49.50281, 8.43956],
+        [49.48853, 8.44591], 
+        [49.47348, 8.46222], 
+        [49.46634, 8.46239], 
+        [49.45697, 8.44213],
+        [49.44966, 8.44256], 
+        [49.44391, 8.45441], 
+        [49.44391, 8.48951], 
+        [49.44134, 8.50256],
+        [49.43866, 8.50651],
+        [49.43152, 8.50857],
+        [49.40494, 8.49621],
+        [49.39109, 8.49964],
+        [49.36985, 8.4993],
+        [49.3466, 8.48076],
+        [49.32624, 8.4502],
+        [49.31863, 8.45192], 
+        [49.31438, 8.45467], 
+        [49.31181, 8.46582],
+        [49.308, 8.47836], 
+        [49.30476, 8.48351],
+        [49.29647, 8.489],
+        [49.29043, 8.48797],
+        [49.2846, 8.47321], 
+        [49.279, 8.45741],
+        [49.26332, 8.44093], 
+        [49.24809, 8.40918],
+        [49.23688, 8.39046], 
+        [49.23027, 8.386],
+        [49.21625, 8.38617], 
+        [49.20178, 8.38583], 
+        [49.1835, 8.38017]
+    ]).addTo(map).bindPopup("I am the Rhine River.");
+
+
+    var popup = L.popup();
+
+    function onMapClick(e) {
+        popup
+            .setLatLng(e.latlng)
+            .setContent("You clicked the map at " + e.latlng.toString())
+            .openOn(map);
+    }
+
+    map.on('click', onMapClick);
+
+
 
     </script>
 </body>
