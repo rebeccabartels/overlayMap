@@ -197,11 +197,23 @@
         
         var osmUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
             osmAttrib = '&copy; ' + osmLink + ' Contributors',
-            landUrl = 'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
+            landUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
             thunAttrib = '&copy; '+osmLink+' Contributors & '+thunLink;
 
         var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib}),
-            landMap = L.tileLayer(landUrl, {attribution: thunAttrib});
+            landMap = L.tileLayer(landUrl, {attribution: thunAttrib}),
+            Legend = L.Control.extend({  
+             options: {
+                position: 'bottomright'
+            },
+            onAdd: function (map,) {
+                var legend = L.DomUtil.create('div', 'map-legend', L.DomUtil.get('map'));
+                // here we can fill the legend with colors, strings and whatever
+                 return legend;
+                  }
+              });
+            ;
+
 
         var map = L.map('map', {
                 layers: [osmMap] // only add one!
@@ -209,8 +221,8 @@
             .setView([49.8857, 7.5515], 8);
 
         var baseLayers = {
-            "OSM Mapnik": osmMap,
-            "Landscape": landMap
+            "Names": osmMap,
+            "Hausen's World": landMap
         };
 
         var overlays = {
@@ -338,6 +350,11 @@
 
     var popup = L.popup();
 
+
+
+
+map.addControl(new Legend());
+
     function onMapClick(e) {
         popup
             .setLatLng(e.latlng)
@@ -346,6 +363,7 @@
     }
 
     map.on('click', onMapClick);
+
 
 
 
