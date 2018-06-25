@@ -100,138 +100,126 @@
         color: 'yellow',
         fillColor: '#f03',
         fillOpacity: 1.5
-    }).addTo(pogromsPlaces).bindPopup("Trier");
+        }).addTo(pogromsPlaces).bindPopup("Trier");
     L.circle([49.1193, 6.1757], 1000, {
         color: 'yellow',
         fillColor: '#f03',
         fillOpacity: 1.5
-    }).addTo(pogromsPlaces).bindPopup("Metz");
+        }).addTo(pogromsPlaces).bindPopup("Metz");
     L.circle([49.3173, 8.4412], 1000, {
         color: 'yellow',
         fillColor: '#f03',
         fillOpacity: 1.5
-    }).addTo(pogromsPlaces).bindPopup("Speyer");
+        }).addTo(pogromsPlaces).bindPopup("Speyer");
     L.circle([49.6341, 8.3507], 1000, {
         color: 'yellow',
         fillColor: '#f03',
         fillOpacity: 1.5
-    }).addTo(pogromsPlaces).bindPopup("Worms, Suicides");
+        }).addTo(pogromsPlaces).bindPopup("Worms, Suicides");
     L.circle([49.7499, 6.6371], 1000, {
         color: 'yellow',
         fillColor: '#f03',
         fillOpacity: 1.5
-    }).addTo(pogromsPlaces).bindPopup("Mainz, Suicides");
+        }).addTo(pogromsPlaces).bindPopup("Mainz, Suicides");
     L.circle([50.9375, 6.9603], 1000, {
         color: 'yellow',
         fillColor: '#f03',
         fillOpacity: 1.5
-    }).addTo(pogromsPlaces).bindPopup("Cologne");
+        }).addTo(pogromsPlaces).bindPopup("Cologne");
 
 
     var hausenPlaces = new L.LayerGroup();
 
     L.circle([49.8, 8.3], 500, {
         color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5
-    }).addTo(hausenPlaces).bindPopup("I am Oppenheim");
+        fillColor: '#FF0000',
+        fillOpacity: 0.4
+        }).addTo(hausenPlaces).bindPopup("I am Oppenheim");
     L.circle([49.7, 8.3], 500, {
         color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5
-    }).addTo(hausenPlaces).bindPopup("I am Worms-Ibersheim");
+        fillColor: '#FF0000',
+        fillOpacity: 2.5
+        }).addTo(hausenPlaces).bindPopup("I am Worms-Ibersheim");
     L.circle([49.8, 8.35], 500, {
         color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5
-    }).addTo(hausenPlaces).bindPopup("I am Dienheim");
+        fillColor: '#FF0000',
+        fillOpacity: 2.5
+        }).addTo(hausenPlaces).bindPopup("I am Dienheim");
     L.circle([49.79, 8.25], 500, {
         color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5
-    }).addTo(hausenPlaces).bindPopup("I am Dolgesheim");
+        fillColor: '#FF0000',
+        fillOpacity: 2.5
+        }).addTo(hausenPlaces).bindPopup("I am Dolgesheim");
     L.circle([49.92, 7.01], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(hausenPlaces).bindPopup("I am Brauneberg/Lieser");
+        }).addTo(hausenPlaces).bindPopup("I am Brauneberg/Lieser");
     L.circle([49.71, 8.47], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(hausenPlaces).bindPopup("I am Groß-Rohrheim");
+        }).addTo(hausenPlaces).bindPopup("I am Groß-Rohrheim");
     L.circle([49.8977, 7.9283], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(hausenPlaces).bindPopup("I am Gensingen");
+        }).addTo(hausenPlaces).bindPopup("I am Gensingen");
     L.circle([49.4874, 8.466], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(hausenPlaces).bindPopup("I am Mannheim");
+        }).addTo(hausenPlaces).bindPopup("I am Mannheim");
     L.circle([49.9667, 7.9045], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(hausenPlaces).bindPopup("I am Bingen");
+        }).addTo(hausenPlaces).bindPopup("I am Bingen");
     L.circle([49.7500, 6.6371], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(hausenPlaces).bindPopup("I am Trier");
+        }).addTo(hausenPlaces).bindPopup("I am Trier");
     L.circle([49.9929, 8.2473], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(hausenPlaces).bindPopup("I am Mainz");
+        }).addTo(hausenPlaces).bindPopup("I am Mainz");
     L.circle([49.9929, 8.2473], 500, {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5
-    }).addTo(hausenPlaces).bindPopup("I am Worms");
+        }).addTo(hausenPlaces).bindPopup("I am Worms");
     
 
-        var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>',
+    var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>',
             thunLink = '<a href="http://thunderforest.com/">Thunderforest</a>';
         
-        var osmUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    var osmUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
             osmAttrib = '&copy; ' + osmLink + ' Contributors',
-            landUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+            landUrl = 'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
             thunAttrib = '&copy; '+osmLink+' Contributors & '+thunLink;
 
-        var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib}),
-            landMap = L.tileLayer(landUrl, {attribution: thunAttrib}),
-            Legend = L.Control.extend({  
-             options: {
-                position: 'bottomright'
-            },
-            onAdd: function (map,) {
-                var legend = L.DomUtil.create('div', 'map-legend', L.DomUtil.get('map'));
-                // here we can fill the legend with colors, strings and whatever
-                 return legend;
-                  }
-              });
-            ;
+    var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib}),
+            landMap = L.tileLayer(landUrl, {attribution: thunAttrib});
 
-
-        var map = L.map('map', {
+    var map = L.map('map', {
                 layers: [osmMap] // only add one!
             })
             .setView([49.8857, 7.5515], 8);
 
-        var baseLayers = {
-            "Names": osmMap,
-            "Hausen's World": landMap
+    var baseLayers = {
+            "OSM Mapnik": osmMap,
+            "Landscape": landMap
         };
 
-        var overlays = {
+    var overlays = {
             "Hausen's Locations": hausenPlaces,
             "Pogroms" : pogromsPlaces,
             "Veridici" : verdiciPlaces
         };
 
-        L.control.layers(baseLayers,overlays).addTo(map);
+    L.control.layers(baseLayers,overlays).addTo(map);
 //rhine river (do not touch coordinates!)
         L.polyline([
         [50.58454, 7.22145],
@@ -350,11 +338,6 @@
 
     var popup = L.popup();
 
-
-
-
-map.addControl(new Legend());
-
     function onMapClick(e) {
         popup
             .setLatLng(e.latlng)
@@ -364,9 +347,6 @@ map.addControl(new Legend());
 
     map.on('click', onMapClick);
 
-
-
-
-    </script>
-</body>
+        </script>
+    </body>
 </html>
